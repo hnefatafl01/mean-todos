@@ -51,7 +51,7 @@ a {
 }
 
 .list-item:hover {
-    background: #D5D5D5;
+    /* background: #D5D5D5; */
     color: #00F1DE;
 }
 
@@ -74,9 +74,6 @@ a {
 
 .list-item-remove {
     width: 10%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
 }
 
 .fa.fa-times {
@@ -116,3 +113,8 @@ button.input-control:active {
     border-radius: 4px;
 }
 
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

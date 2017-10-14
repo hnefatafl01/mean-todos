@@ -27,7 +27,7 @@
                 todoService.getTodos().then((response) => {
                     vm.todos = response.data;
                 })
-                delete vm.todo.name;
+                // delete vm.todo.name;
             }
         }
 
