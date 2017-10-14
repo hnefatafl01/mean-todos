@@ -29,6 +29,14 @@
                 })
                 // delete vm.todo.name;
             }
+
+            vm.onDeleteTodo = function(todo) {
+                todoService.deleteTodo(todo._id);
+                todoService.getTodos().then((response) => {
+                    vm.todos = response.data;
+                })
+            }
+            
         }
 
 }())

@@ -13,5 +13,12 @@
                 return response.data;
             });
         }
+
+        this.deleteTodo = function(id) {
+            console.log(id)
+            return $http.delete(`${API_URL}/todos/${id}`).then((response) => {
+                return response;
+            })
+        }
     }
 }());

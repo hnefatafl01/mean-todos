@@ -10,13 +10,21 @@ router.get('/todos', (req, res) => {
 })
 
 router.post('/todos', (req, res) => {
-    console.log(req.body)
     Todo.create({
         name: req.body.name,
         isDone: false
     }, (err, todo_instance) => {
         if (err) console.log(err);
         res.send(todo_instance);
+    })
+});
+
+router.delete('/todos/:id', (req, res) => {
+    Todo.findOneAndRemove({
+        _id : req.params.id
+    }, (err, result) => {
+        if(err) res.send(err);
+        res.send(result);
     })
 });
 

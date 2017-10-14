@@ -2,12 +2,14 @@
     <h1>todos</h1>
     <div >
         <ul class="list-group">
-            <li class="list-item" ng-repeat="todo in $ctrl.todos">
+            <li class="list-item" ng-cloak ng-repeat="todo in $ctrl.todos">
                 <div class="list-item-status flex-center">
                     <i class="fa fa-check-square" aria-hidden="true" ng-if="todo.isDone === true"></i>
                 </div>
                 <div class="list-item-name">{{todo.name}}</div>
-                <a class="list-item-remove flex-center" ng-href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+                <a class="list-item-remove flex-center" ng-href="#" ng-click="$ctrl.onDeleteTodo(todo)">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
             </li>        
         </ul> 
         <div class="input-group">
