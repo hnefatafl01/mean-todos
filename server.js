@@ -11,7 +11,8 @@ const todos = require('./app/api/todos/todos');
 const logger = require('morgan');
 const todosController = require('./app/controllers/todosController');
 
-mongoose.connect(db.url, { useMongoClient: true });
+const dbConnect = mongoose.connect(db.url, { useMongoClient: true });
+dbConnect.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use(logger('tiny'));
 app.use(bodyParser.json());

@@ -9,4 +9,15 @@ router.get('/todos', (req, res) => {
     })
 })
 
+router.post('/todos', (req, res) => {
+    console.log(req.body)
+    Todo.create({
+        name: req.body.name,
+        isDone: false
+    }, (err, todo_instance) => {
+        if (err) console.log(err);
+        res.send(todo_instance);
+    })
+});
+
 module.exports = router;

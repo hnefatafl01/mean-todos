@@ -8,5 +8,10 @@
         this.getTodos = function() {
             return $http.get(`${API_URL}/todos`);
         }
+        this.addTodo = function(newTodo) {
+            return $http.post(`${API_URL}/todos`, newTodo).then((response) => {
+                return response.data;
+            });
+        }
     }
 }());
