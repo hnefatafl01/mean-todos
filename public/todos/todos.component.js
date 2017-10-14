@@ -12,10 +12,14 @@
             const vm = this;
 
             vm.$onInit = function() {
-
+                vm.todo = '';
                 todoService.getTodos().then((response) => {
                     vm.todos = response.data;
                 })
+            }
+
+            vm.OnAddTodo = function(todo) {
+                console.log(todo);
             }
         }
 
