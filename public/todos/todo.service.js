@@ -3,7 +3,7 @@
     angular.module('app')
         .service('todoService', todoService)
 
-    const API_URL = 'https://mean-app-todos.herokuapp.com/api' || 'http://localhost:3000/api';
+    const API_URL =   'http://localhost:3000/api' || 'https://mean-app-todos.herokuapp.com/api';
 
     function todoService($http) {
         this.getTodos = function() {

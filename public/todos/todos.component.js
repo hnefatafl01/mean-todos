@@ -19,15 +19,13 @@
 
             vm.onAddTodo = function(e) {
                 e.preventDefault();
-                // $scope.$watch('todos', (change) => {
-                    // vm.todos = change;
-                    // console.log(change);
                 todoService.addTodo(vm.todo)
-                // })
                 todoService.getTodos().then((response) => {
                     vm.todos = response.data;
+                }).then(() => {
+                    delete vm.todo.name;
                 })
-                // delete vm.todo.name;
+                
             }
 
             vm.onDeleteTodo = function(todo) {
