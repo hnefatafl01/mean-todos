@@ -11,5 +11,10 @@
                 url: '/',
                 component: 'home'
             })
+            .state({
+                name: 'todo-detail',
+                url: '/edit/:id',
+                component: 'todo-detail'
+            })
     }
 }())

@@ -6,8 +6,8 @@
             templateUrl: '/todos/todos.template.html'
         });
 
-        homeController.$inject = ['$scope','$interval', '$timeout', 'todoService'];
-        function homeController($scope, $interval, $timeout, todoService) {
+        homeController.$inject = ['$scope','$interval', 'todoService'];
+        function homeController($scope, $interval, todoService) {
             const vm = this;
             
             vm.$onInit = function() {
@@ -18,10 +18,7 @@
                     vm.tagline += changeTag[i];
                     ++i;
                 }, 400, 13, true);
-                
-                    
-                
-
+ 
                 todoService.getTodos().then((response) => {
                     vm.todos = response.data;
                 })
