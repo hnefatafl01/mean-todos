@@ -19,4 +19,13 @@ router.post('/todos', (req, res) => {
     })
 });
 
+router.delete('/todos/:id', (req, res) => {
+    Todo.findOneAndRemove({
+        _id : req.params.id
+    }, (err, result) => {
+        if(err) res.send(err);
+        res.send(result);
+    })
+});
+
 module.exports = router;
