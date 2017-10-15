@@ -47,7 +47,6 @@ a {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
 }
 
 .list-item:hover {
@@ -102,7 +101,7 @@ a {
 
 button.input-control {
     background-color: #00F1DE;
-    
+    margin-bottom: 8px;
 }
 
 button.input-control:active {
@@ -117,4 +116,34 @@ button.input-control:active {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes added {
+    from { 
+        opacity: 0;
+        top: -500px;
+    }
+    to {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+@keyframes deleted {
+    from {
+        top: 0;
+        opacity: 1;
+    }
+    to {
+        top: 200px;
+        opacity: 0;
+    }
+}
+
+.list-item.ng-enter {
+animation: 0.25s linear added;
+}
+
+.list-item.ng-leave {
+animation: 0.25s linear deleted;
 }
