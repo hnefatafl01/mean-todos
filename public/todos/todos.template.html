@@ -1,14 +1,16 @@
 <div class="container">
-    <h1>todos</h1>
+    <h1>todos<span class="title">{{$ctrl.tagline}}</span></h1>
     <div >
         <div class="input-group">
             <form ng-submit="$ctrl.onAddTodo($event)">
                 <input 
+                    ng-class="$ctrl.valid ? invalid : '';"
                     class="input-control" 
                     type="text" 
                     placeholder="new todo" 
                     name="todo" 
-                    ng-model="$ctrl.todo.name"/>
+                    ng-model="$ctrl.todo.name"
+                    required/>
                 <button class="input-control" type="submit">Add</button> 
             </form>
         </div>

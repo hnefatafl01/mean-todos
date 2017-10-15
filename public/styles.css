@@ -52,6 +52,7 @@ a {
 .list-item:hover {
     /* background: #D5D5D5; */
     color: #00F1DE;
+    transition: 0.3s ease color;
 }
 
 .list-item-status {
@@ -146,4 +147,14 @@ animation: 0.25s linear added;
 
 .list-item.ng-leave {
 animation: 0.25s linear deleted;
+}
+
+.invalid-form {
+    border: 1px solid #FF0046;
+}
+
+.title {
+    background: linear-gradient(to right, #ffce00, #ffb031);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
