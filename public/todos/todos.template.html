@@ -1,17 +1,6 @@
 <div class="container">
     <h1>todos</h1>
     <div >
-        <ul class="list-group">
-            <li class="list-item" ng-cloak ng-repeat="todo in $ctrl.todos">
-                <div class="list-item-status flex-center">
-                    <i class="fa fa-check-square" aria-hidden="true" ng-if="todo.isDone === true"></i>
-                </div>
-                <div class="list-item-name">{{todo.name}}</div>
-                <a class="list-item-remove flex-center" ng-href="#" ng-click="$ctrl.onDeleteTodo(todo)">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </a>
-            </li>        
-        </ul> 
         <div class="input-group">
             <form ng-submit="$ctrl.onAddTodo($event)">
                 <input 
@@ -23,5 +12,16 @@
                 <button class="input-control" type="submit">Add</button> 
             </form>
         </div>
+        <div class="list-group">
+            <div class="list-item" ng-cloak ng-repeat="todo in $ctrl.todos track by $index">
+                <div class="list-item-status flex-center">
+                    <i class="fa fa-check-square" aria-hidden="true" ng-if="todo.isDone === true"></i>
+                </div>
+                <div class="list-item-name">{{todo.name}}</div>
+                <a class="list-item-remove flex-center" ng-href="#" ng-click="$ctrl.onDeleteTodo(todo)">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
+            </div>        
+        </div> 
     </div>
 </div>
