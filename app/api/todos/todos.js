@@ -10,7 +10,6 @@ router.get('/todos', (req, res) => {
 })
 
 router.post('/todos', (req, res) => {
-    console.log(req.body)
     Todo.create({
         name: req.body.name,
         isDone: false
